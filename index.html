@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Client Dashboard — Intake & New Client Workflow</title>
+<style>
+  :root{
+    --bg:#ffffff; --text:#0f172a; --muted:#475569; --accent:#3cbfba; --border:#e6eef0;
+    --card:#ffffff; --card-alt:#f8fafc; --ring:0 0 0 4px rgba(60,191,186,.12)
+  }
+  *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text)}
+  .wrap{max-width:1080px;margin:28px auto;padding:20px}
+  .hero{background:linear-gradient(135deg,#063249,#0a475f);color:#fff;padding:20px;border-radius:12px}
+  .grid{display:grid;grid-template-columns:1fr .42fr;gap:16px;margin-top:18px}
+  .card{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:10px}
+  .steps{display:grid;gap:12px}
+  .step{background:var(--card-alt);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .step-head{display:flex;align-items:center;gap:12px;padding:12px;cursor:pointer}
+  .step .body{display:none;padding:12px;color:var(--muted)}
+  .step.open{background:#fff;box-shadow:var(--ring);border-color:#dbeeea}
+  .screenshot{max-width:100%;border-radius:8px;border:1px solid #e9eef0;margin-top:10px}
+  .btn{background:var(--accent);color:#062a28;border:0;padding:10px 12px;border-radius:8px;cursor:pointer;font-weight:700}
+  .small{font-size:13px;color:var(--muted)}
+  .quiz .q{padding:10px;border-radius:8px;border:1px solid var(--border);margin-top:10px}
+  footer{margin-top:18px;font-size:12px;color:var(--muted);text-align:center}
+  @media(max-width:880px){ .grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1 style="margin:0">Client Dashboard — Intake & New Client Workflow</h1>
+      <p style="margin:.4rem 0 0;color:rgba(230,246,244,.9)">How to record a prospective client, start a new client service, collect payment details, and trigger contract + invoicing.</p>
+    </section>
+
+    <div class="grid" role="main">
+      <main class="card" aria-live="polite">
+        <h3 style="margin-top:0">Training lessons</h3>
+        <div class="steps" id="steps">
+
+          <!-- Lesson 1: Intake -->
+          <article class="step" data-step="1">
+            <div class="step-head"><strong>Lesson 1 — Create / Locate Client Intake</strong></div>
+            <div class="body">
+              <p><strong>Key idea:</strong> Enter the prospective client's contact and demographic data in the Intake form before you can create a new client dashboard entry.</p>
+
+              <p><strong>Step-by-step:</strong></p>
+              <ol>
+                <li>Open the Intake page from the dashboard menu.</li>
+                <li>Fill out required fields: full name, DOB, place of birth, contact info, and any immediate notes.</li>
+                <li>Save the intake — the record will appear in the intake list (use this list when creating the new client dashboard entry).</li>
+              </ol>
+
+              <img class="screenshot" src="images/01_intake_list.png" alt="Intake list (example)" />
+              <p class="small">Screenshot: intake list and sample intake form (example).</p>
+            </div>
+          </article>
+
+          <!-- Lesson 2: New Client Dashboard -->
+          <article class="step" data-step="2">
+            <div class="step-head"><strong>Lesson 2 — Start New Client Dashboard Entry</strong></div>
+            <div class="body">
+              <p><strong>Key idea:</strong> When the prospect retains the firm, open the New Client Dashboard form and select the intake you created.</p>
+
+              <p><strong>Step-by-step:</strong></p>
+              <ol>
+                <li>Navigate to <em>New Client Dashboard Form</em> from the dashboard menu.</li>
+                <li>From the client selector, choose the intake record you previously saved.</li>
+                <li>Confirm name, contact, and any intake notes are populated into the form.</li>
+              </ol>
+
+              <img class="screenshot" src="images/02_new_client_form.png" alt="New client dashboard form" />
+              <p class="small">Screenshot: new client dashboard form showing client selector and case-type dropdown.</p>
+            </div>
+          </article>
+
+          <!-- Lesson 3: Select Case Type -->
+          <article class="step" data-step="3">
+            <div class="step-head"><strong>Lesson 3 — Select Case / Petition Type</strong></div>
+            <div class="body">
+              <p><strong>Key idea:</strong> Choose the application type(s) (e.g., I-130, I-589, waivers) from the list. This drives subsequent fields and fees.</p>
+
+              <p><strong>Step-by-step:</strong></p>
+              <ol>
+                <li>Open the <em>Petition Type</em> dropdown and select the desired application(s).</li>
+                <li>If the selected type requires additional details (e.g., A-numbers), click "Add record" or complete the prompted fields.</li>
+                <li>Confirm the case status and any special flags (e.g., asylum = yes/no).</li>
+              </ol>
+
+              <img class="screenshot" src="images/03_case_type_dropdown.png" alt="Case type dropdown" />
+              <p class="small">When multi-party applications are selected, additional A-number fields will appear for dependents.</p>
+            </div>
+          </article>
+
+          <!-- Lesson 4: Add A-numbers & Dependents -->
+          <article class="step" data-step="4">
+            <div class="step-head"><strong>Lesson 4 — Add Dependents / A-numbers</strong></div>
+            <div class="body">
+              <p><strong>Key idea:</strong> If the application includes spouses/dependents, populate their A-numbers in the extra fields.</p>
+
+              <p><strong>Step-by-step:</strong></p>
+              <ol>
+                <li>Click the A-Number field to add the client's A-number (if available).</li>
+                <li>If the application includes additional people, populate each additional A-number field that appears.</li>
+                <li>Confirm each dependent’s name and A-number are correct before saving.</li>
+              </ol>
+
+              <img class="screenshot" src="images/04_a_numbers.png" alt="Additional A-number fields" />
+              <p class="small">Example layout for adding A-numbers and dependents.</p>
+            </div>
+          </article>
+
+          <!-- Lesson 5: Payment method & plan -->
+          <article class="step" data-step="5">
+            <div class="step-head"><strong>Lesson 5 — Payment Method & Plans</strong></div>
+            <div class="body">
+              <p><strong>Key idea:</strong> Choose how the client will pay today (cash/card) or which payment plan they choose; offer automatic payments enrollment for the discount.</p>
+
+              <p><strong>Step-by-step:</strong></p>
+              <ol>
+                <li>Locate the "Initial Payment Method" field and select the method (Cash / Card / Bank / Other).</li>
+                <li>If selecting a payment plan, choose the plan amount from the Fee Agreement dropdown.</li>
+                <li>Record the staff member who read the fee agreement in the client's primary language.</li>
+                <li>Ask client if they want automatic payments (discount applies); select the automatic payments option if they do.</li>
+              </ol>
+
+              <img class="screenshot" src="images/05_payment_method.png" alt="Payment and fee agreement fields" />
+              <p class="small">Payment method and fee agreement fields example.</p>
+            </div>
+          </article>
+
+          <!-- Lesson 6: Submit, contract & Docketwise -->
+          <article class="step" data-step="6">
+            <div class="step-head"><strong>Lesson 6 — Submit, Contract & Apply Payment in Docketwise</strong></div>
+            <div class="body">
+              <p><strong>Key idea:</strong> After submitting the New Client Dashboard, the system generates a contract and a Docketwise account/invoice; then apply payment in Docketwise.</p>
+
+              <p><strong>Step-by-step:</strong></p>
+              <ol>
+                <li>Click <em>Submit</em>. The client receives an emailed contract to sign electronically.</li>
+                <li>Open Docketwise → Client → Invoice for the newly created matter.</li>
+                <li>Choose the payment type in Docketwise (credit card, cash, etc.), select correct office account/date/amount, and save payment details.</li>
+                <li>If paying by card, enter billing info and finalize the payment to apply funds to the invoice.</li>
+              </ol>
+
+              <img class="screenshot" src="images/06_docketwise_invoice.png" alt="Docketwise invoice and payment screen" />
+              <p class="small">Docketwise invoice/payment application example.</p>
+            </div>
+          </article>
+
+          <!-- Quiz -->
+          <article class="step" data-step="quiz">
+            <div class="step-head"><strong>Knowledge Check</strong></div>
+            <div class="body quiz" id="quiz">
+              <div class="q" data-key="a">
+                <div><strong>1)</strong> What must be done before opening a New Client Dashboard entry?</div>
+                <label><input type="radio" name="q1" value="a"> Create a client intake record</label><br/>
+                <label><input type="radio" name="q1" value="b"> Take the client to Docketwise first</label><br/>
+                <label><input type="radio" name="q1" value="c"> Ask them to sign the contract first</label>
+              </div>
+
+              <div class="q" data-key="0">
+                <div><strong>2)</strong> Where do you record the payment after the form submit?</div>
+                <label><input type="radio" name="q2" value="0"> Docketwise invoice</label><br/>
+                <label><input type="radio" name="q2" value="1"> Intake form only</label>
+              </div>
+
+              <div style="margin-top:10px"><button id="gradeBtn" class="btn">Grade</button> <span id="scoreOut" style="font-weight:700;margin-left:10px"></span></div>
+            </div>
+          </article>
+
+        </div>
+      </main>
+
+      <aside class="card" id="side">
+        <h4 style="margin-top:0">Quick Reference</h4>
+        <p class="small"><strong>Before you start:</strong> Intake must be created and saved. (See Lesson 1 screenshot.)</p>
+        <p class="small"><strong>Important fields:</strong><br>- Client selector (use saved intake)<br>- Petition Type / Add record for immigration court cases<br>- A-numbers for dependents<br>- Fee Agreement / Automatic payments</p>
+        <p class="small"><strong>After submit:</strong> Check client email for contract; open Docketwise invoice to apply payment.</p>
+      </aside>
+    </div>
+
+    <footer>© Fibi Law Firm — Client Dashboard Training</footer>
+  </div>
+
+<script>
+(function(){
+  // collapsible steps
+  document.querySelectorAll('.step').forEach(s=>{
+    s.querySelector('.step-head').addEventListener('click', ()=>{
+      s.classList.toggle('open');
+      const b = s.querySelector('.body');
+      b.style.display = s.classList.contains('open') ? 'block' : 'none';
+    });
+  });
+
+  // grade quiz
+  document.getElementById('gradeBtn').addEventListener('click', ()=>{
+    const q1 = document.querySelector('input[name=q1]:checked');
+    const q2 = document.querySelector('input[name=q2]:checked');
+    let score=0, total=2;
+    if(q1 && q1.value==='a') score++;
+    if(q2 && q2.value==='0') score++;
+    const pct = Math.round((score/total)*100);
+    document.getElementById('scoreOut').textContent = 'Score: ' + pct + '%';
+    if(pct>=80) alert('Passed — you can print the acknowledgement or mark completion.');
+  });
+})();
+</script>
+</body>
+</html>
